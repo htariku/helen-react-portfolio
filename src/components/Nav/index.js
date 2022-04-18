@@ -1,6 +1,14 @@
 import React, { useEffect } from 'react';
 import { capitalizeFirstLetter } from '../../utils/helpers';
 
+
+import resume0 from '../assets/small/resume/code-resume.png';
+
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { library } from '@fortawesome/fontawesome-svg-core'
+library.add(fab)
+
 function Nav(props) {
   const {
     categories = [],
@@ -18,7 +26,7 @@ function Nav(props) {
     <header className="flex-row px-1">
       <h2>
         <a data-testid="link" href="/">
-          <span role="img" aria-label="camera"> 📸</span> Oh Snap!
+          <span role="img" aria-label="camera"> 📸</span> Helen Tariku <a href="https://github.com/htariku"><FontAwesomeIcon icon={["fab","github"]}></FontAwesomeIcon></a>&nbsp;&nbsp;<a href="https://www.linkedin.com/in/helen-tariku-5283aa156/"><FontAwesomeIcon icon={["fab","linkedin"]}></FontAwesomeIcon></a>
         </a>
       </h2>
       <nav>
@@ -30,6 +38,9 @@ function Nav(props) {
           </li>
           <li className={`mx-2 ${contactSelected && 'navActive'}`}>
             <span onClick={() => setContactSelected(true)}>Contact</span>
+          </li>
+          <li>
+            <a href = {resume0} target= "_blank">Resume</a>
           </li>
           {categories.map((category) => (
             <li
@@ -55,3 +66,5 @@ function Nav(props) {
 }
 
 export default Nav;
+
+     
